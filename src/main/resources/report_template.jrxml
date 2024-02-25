@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="report_template" language="java" pageWidth="595" pageHeight="842" orientation="Landscape" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8a73b23e-2d71-4ba7-8119-2c9914d7f518">
+    <queryString>
+        <![CDATA[SELECT * FROM pet]]>
+    </queryString>
+    <field name="id" class="java.lang.Long"/>
+    <field name="birthday" class="java.util.Date"/>
+    <field name="breed" class="java.lang.String"/>
+    <field name="name" class="java.lang.String"/>
+    <!-- Define more fields as needed -->
+    <title>
+        <band height="50">
+            <staticText>
+                <reportElement x="0" y="0" width="100" height="20" uuid="8712e7af-7881-4c7d-93b3-c7eac64c0fbf"/>
+                <text><![CDATA[Your Report Title]]></text>
+            </staticText>
+        </band>
+    </title>
+    <detail>
+        <band height="20">
+            <rectangle>
+                <reportElement x="0" y="0" width="100" height="20" uuid="1c3e54aa-d22f-4a1b-bcf2-ffdeaa953d1b"/>
+                <graphicElement>
+                    <pen lineWidth="1.0" lineColor="#000000"/>
+                </graphicElement>
+            </rectangle>
+            <textField>
+                <reportElement x="5" y="0" width="90" height="20" uuid="1c3e54aa-d22f-4a1b-bcf2-ffdeaa953d1b"/>
+                <textElement verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="100" y="0" width="100" height="20" uuid="6c6c8784-38a4-4f36-8690-8ccab9c67e77"/>
+                <textElement>
+                    <font size="12" isBold="true"/>
+                    <paragraph leftIndent="5"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{birthday}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="200" y="0" width="100" height="20" uuid="6c6c8784-38a4-4f36-8690-8ccab9c67e78"/>
+                <textElement>
+                    <font size="12" isBold="true"/>
+                    <paragraph leftIndent="5"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{breed}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="300" y="0" width="100" height="20" uuid="6c6c8784-38a4-4f36-8690-8ccab9c67e79"/>
+                <textElement>
+                    <font size="12" isBold="true"/>
+                    <paragraph leftIndent="5"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+            </textField>
+            <!-- Add more text fields for other columns -->
+        </band>
+    </detail>
+</jasperReport>
